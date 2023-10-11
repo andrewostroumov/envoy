@@ -1,0 +1,11 @@
+resources:
+  root:
+    path: /
+  routes:
+    - path: grpc.greeter.v1
+      cluster: greeter
+      roles: [{ name: admin }]
+
+clusters:
+  - name: greeter
+    addr: grpc-greeter:9000
